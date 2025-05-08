@@ -1,66 +1,50 @@
-1. Importação da biblioteca
-ts
+ Explicação do código (resumo por partes)
+typescript
 Copiar
 Editar
 import * as readlineSync from 'readline-sync';
-A gente usa essa biblioteca para ler o que o usuário digita no terminal.
-Sem ela, o TypeScript não consegue conversar com o teclado.
+Importa o módulo readline-sync para permitir entrada de dados via teclado (síncrona).
 
-2. Mostrar o menu
-ts
+typescript
+Copiar
+Editar
+let opcaoNum: number;
+Declara uma variável opcaoNum do tipo número que guardará a opção digitada.
+
+typescript
+Copiar
+Editar
+do {
+  // ...
+} while (opcaoNum < 1 || opcaoNum > 4);
+Repete o bloco enquanto o usuário digitar uma opção inválida (fora do intervalo 1 a 4).
+
+Dentro do do, temos:
+
+typescript
 Copiar
 Editar
 console.log("Menu de Opções:");
-console.log("1 – Criar um cadastro");
-console.log("2 – Excluir um cadastro");
-console.log("3 – Atualizar um cadastro");
-console.log("4 – Listar cadastros");
-Aqui o sistema só exibe o menu com as opções numéricas.
+console.log("1 - Criar um cadastro");
+// ...
+const opcao = readlineSync.question("Escolha uma alternativa (1-4): ");
+Mostra o menu e pede ao usuário uma opção.
 
-3. Ler a opção escolhida pelo usuário
-ts
+typescript
 Copiar
 Editar
-const opcao = readlineSync.question("Escolha uma opção (1-4): ");
-Esse comando pergunta ao usuário e guarda a resposta (como texto) na variável opcao.
+opcaoNum = parseInt(opcao);
+Converte o texto digitado para número.
 
-4. Converter a opção para número
-ts
-Copiar
-Editar
-const opcaoNum = parseInt(opcao);
-Como a resposta vem como texto, usamos parseInt para transformar em número. Isso é importante para o switch funcionar.
-
-5. Selecionar a ação com switch
-ts
+typescript
 Copiar
 Editar
 switch (opcaoNum) {
   case 1:
     console.log("Você escolheu: Criar um cadastro");
     break;
-  ...
+  // demais casos...
   default:
-    console.log("Opção inválida.");
+    console.log("Opção inválida. Por favor, escolha entre 1 e 4.");
 }
-O switch funciona como uma escolha entre vários caminhos.
-Ele compara o número que o usuário digitou com os casos:
-
-Se for 1, mostra que vai criar um cadastro.
-
-Se for 2, mostra que vai excluir.
-
-E assim por diante.
-
-Se for qualquer número fora de 1 a 4, cai no default, e mostra "opção inválida".
-
-📢 Como explicar na sala (dica de fala):
-"Esse código é um menu interativo no terminal. Ele mostra 4 opções pro usuário escolher.
-Usamos o readline-sync pra conseguir ler o que a pessoa digita.
-Depois, com o switch, o programa compara a opção escolhida e mostra qual ação o usuário selecionou.
-Se a opção não for válida, ele avisa. É uma forma básica de simular um menu em sistemas reais."
-
-npm install readline-sync
-npm install --save-dev typescript ts-node @types/node @types/readline-sync
-
-
+Usa um switch-case para identificar qual opção foi escolhida e exibir a mensagem correspondente.
