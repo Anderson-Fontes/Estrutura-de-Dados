@@ -1,0 +1,24 @@
+Início
+  repetir
+    Exibir "Menu de Opções:"
+    Exibir "1 - Criar um cadastro"
+    Exibir "2 - Excluir um cadastro"
+    Exibir "3 - Atualizar um cadastro"
+    Exibir "4 - Listar cadastros"
+
+    Ler opcaoNum
+
+    Selecionar opcaoNum
+      Caso 1:
+        Exibir "Você escolheu: Criar um cadastro"
+      Caso 2:
+        Exibir "Você escolheu: Excluir um cadastro"
+      Caso 3:
+        Exibir "Você escolheu: Atualizar um cadastro"
+      Caso 4:
+        Exibir "Você escolheu: Listar cadastros"
+      OutroCaso:
+        Exibir "Opção inválida. Por favor, escolha entre 1 e 4."
+    FimSelecionar
+  até opcaoNum >= 1 e opcaoNum <= 4
+Fim

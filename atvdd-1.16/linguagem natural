@@ -1,0 +1,24 @@
+O sistema apresenta um menu contendo as seguintes opções:
+
+1 – Criar um cadastro
+2 – Excluir um cadastro
+3 – Atualizar um cadastro
+4 – Listar cadastros
+
+Em seguida, o sistema solicita que o usuário escolha uma das opções disponíveis.
+
+Após o usuário inserir sua escolha, o sistema interpreta o valor digitado.
+
+Com base na opção fornecida:
+
+Se for 1, o sistema exibe a mensagem: "Você escolheu Criar um cadastro".
+
+Se for 2, o sistema exibe: "Você escolheu Excluir um cadastro".
+
+Se for 3, o sistema informa: "Você escolheu Atualizar um cadastro".
+
+Se for 4, o sistema mostra: "Você escolheu Listar cadastros".
+
+Caso a entrada seja diferente das opções acima, o sistema responde: "Opção inválida".
+
+O processo se repete até que uma opção válida seja selecionada.
